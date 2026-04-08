@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blackbird Cafe | Community Connections and Coffee</title>
+  <meta name="description" content="Blackbird Cafe | Established 2010. Community connections and coffee."/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"/>
+
+  <!-- Leaflet (map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" aria-label="Top navigation">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Blackbird Cafe home">
+      <img alt="Blackbird Cafe logo" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/blackbird%20logo%20(1).png/:/rs=w:72,h:72,m"/>
+      <div>
+        <div class="name">BLACKBIRD CAFE</div>
+        <div class="tag">Open everyday &bull; 7AM &ndash; 2:30PM</div>
+      </div>
+    </a>
+
+    <nav class="links" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#order">Pick a Cafe</a>
+      <a href="#catering">Catering</a>
+      <a href="#shop">Shop</a>
+      <a href="#play">Rewards</a>
+      <a href="https://order.toasttab.com/egiftcards/blackbird-cafee-inc" target="_blank" rel="noopener">Gift Cards</a>
+      <a href="https://forms.monday.com/forms/2a22af587a1f0be59fa975e7b8598ca0?r=use1" target="_blank" rel="noopener">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a class="btn dark nav-order-btn" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Start Order</a>
+    </div>
+  </div>
+</header>
+
+<main id="top" aria-label="Blackbird Cafe one-page site">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="https://img1.wsimg.com/isteam/stock/47047" alt="" loading="eager" decoding="async"/>
+      <div class="hero-dim"></div>
+    </div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 class="h1">Community connections<br/>and coffee</h1>
+        <div class="sub">Established <strong>2010</strong>. Espresso, loose-leaf tea, all-day breakfast and lunch, catering, and coffee shipped nationwide.</div>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Start Order</a>
+          <button class="btn" type="button" data-menu="breakfast" data-menu-open="front">View menu</button>
+          <a class="btn" href="#order">Find a cafe</a>
+        </div>
+      </div>
+
+      <aside class="hero-menu" aria-label="Menu preview">
+        <button class="menu-stack" type="button" aria-label="Open menu preview" data-menu-open="front">
+          <img class="menu-back" src="https://cdn.prod.website-files.com/64aa957da446d8dc44869f81/695a71d71a2c4314249fa60c_menu_back.png" alt="Menu back preview" loading="lazy" decoding="async"/>
+          <img class="menu-front" src="https://cdn.prod.website-files.com/64aa957da446d8dc44869f81/695a71d7576c42dc836b3550_menu_front.png" alt="Menu front preview" loading="lazy" decoding="async"/>
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" aria-label="Menu overview">
+    <div class="wrap grid">
+      <div>
+        <div class="eyebrow">Menu</div>
+        <h2>Breakfast and lunch.<br/>All day.</h2>
+        <p>Organic espresso and coffee (direct from a small farm), roasted locally. Loose-leaf tea, fresh baked pastries, bagels, salads, plus the classics you come back for.</p>
+
+        <div class="cards" role="list" aria-label="Menu pillars">
+          <div class="card" role="listitem">
+            <h3>Espresso + Coffee</h3>
+            <ul class="bul">
+              <li>Organic, direct-sourced</li>
+              <li>Roasted locally</li>
+              <li>Shipped nationwide</li>
+            </ul>
+            <div class="meta"><span>Crafted</span><span>Consistent</span></div>
+          </div>
+          <div class="card" role="listitem">
+            <h3>All-day food</h3>
+            <ul class="bul">
+              <li>Breakfast sandwiches</li>
+              <li>Lunch sandwiches</li>
+              <li><strong>Signature:</strong> Early Bird &bull; Pesto Chicken &bull; Smoky Spicy Turkey</li>
+            </ul>
+            <div class="meta"><span>Fast</span><span>Filling</span></div>
+          </div>
+          <div class="card" role="listitem">
+            <h3>Bakery + Tea</h3>
+            <ul class="bul">
+              <li>Pastries baked daily</li>
+              <li>Bagels, sweet + savory</li>
+              <li>Loose-leaf tea</li>
+            </ul>
+            <div class="meta"><span>Fresh</span><span>Ready</span></div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn primary" type="button" data-menu="breakfast" data-menu-open="front">Breakfast menu</button>
+          <button class="btn" type="button" data-menu="lunch" data-menu-open="front">Lunch menu</button>
+          <a class="btn dark" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Start Order</a>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="Visual: food and coffee">
+        <img src="https://img1.wsimg.com/isteam/stock/47047" alt=""/>
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="stamp stamp-light">
+          <strong>Signature staples</strong>
+          <span>Early Bird &bull; Pesto Chicken &bull; Smoky Spicy Turkey</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER / LOCATIONS -->
+  <section id="order" aria-label="Order and locations">
+    <div class="wrap">
+      <div class="eyebrow">Locations</div>
+      <div class="order-head">
+        <div class="order-head-row">
+          <h2>Pick a cafe.</h2>
+          <div class="loc-tools-inline" aria-label="Find a nearby cafe">
+            <label class="sr" for="zipInput">ZIP code</label>
+            <input class="loc-input" id="zipInput" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" placeholder="Enter ZIP (US)"/>
+            <button class="btn dark small" id="zipFindBtn" type="button">Find</button>
+            <button class="btn gray small" id="geoBtn" type="button">Use my location</button>
+          </div>
+        </div>
+        <div class="loc-status" id="locStatus" aria-live="polite"></div>
+        <p>Find us across Massachusetts and the Vineyard. Tap a location to view the map and order.</p>
+      </div>
+
+      <div class="order-layout order-v3">
+        <div class="order-map-card">
+          <div class="order-map" id="orderMap" aria-label="Map showing locations"></div>
+          <div class="map-caption">Map is for orientation. Exact addresses can be added anytime.</div>
+        </div>
+
+        <div class="order-right" aria-label="Locations list">
+          <div class="order-pills" id="locPills">
+            <div class="loc-pill is-active" data-lat="42.4851" data-lng="-71.4328" data-loc="acton">
+              <div class="loc-pill-img">
+                <img alt="Blackbird Cafe logo" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/blackbird%20logo%20(1).png/:/rs=w:72,h:72,m"/>
+              </div>
+              <div class="loc-pill-body">
+                <div class="loc-name">Acton</div>
+                <div class="loc-addr">Acton, MA</div>
+                <div class="loc-actions">
+                  <a class="mini-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Blackbird%20Cafe%20Acton%20MA" target="_blank" rel="noopener">Map</a>
+                  <a class="mini-btn primary" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Order</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="loc-pill" data-lat="42.4906" data-lng="-71.2762" data-loc="bedford">
+              <div class="loc-pill-img">
+                <img alt="Blackbird Cafe logo" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/blackbird%20logo%20(1).png/:/rs=w:72,h:72,m"/>
+              </div>
+              <div class="loc-pill-body">
+                <div class="loc-name">Bedford</div>
+                <div class="loc-addr">Bedford, MA</div>
+                <div class="loc-actions">
+                  <a class="mini-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Blackbird%20Cafe%20Bedford%20MA" target="_blank" rel="noopener">Map</a>
+                  <a class="mini-btn primary" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Order</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="loc-pill" data-lat="41.3895" data-lng="-70.472" data-loc="chappaquiddick">
+              <div class="loc-pill-img">
+                <img alt="Blackbird Cafe logo" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/blackbird%20logo%20(1).png/:/rs=w:72,h:72,m"/>
+              </div>
+              <div class="loc-pill-body">
+                <div class="loc-name">Chappaquiddick</div>
+                <div class="loc-addr">Chappaquiddick (Food Truck)</div>
+                <div class="loc-actions">
+                  <a class="mini-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Blackbird%20Cafe%20Chappaquiddick" target="_blank" rel="noopener">Map</a>
+                  <a class="mini-btn primary" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Order</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="loc-pill" data-lat="41.389" data-lng="-70.513" data-loc="edgartown">
+              <div class="loc-pill-img">
+                <img alt="Blackbird Cafe logo" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/blackbird%20logo%20(1).png/:/rs=w:72,h:72,m"/>
+              </div>
+              <div class="loc-pill-body">
+                <div class="loc-name">Edgartown</div>
+                <div class="loc-addr">Edgartown, MA</div>
+                <div class="loc-actions">
+                  <a class="mini-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Blackbird%20Cafe%20Edgartown%20MA" target="_blank" rel="noopener">Map</a>
+                  <a class="mini-btn primary" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Order</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="loc-pill" data-lat="42.6112" data-lng="-71.5745" data-loc="groton">
+              <div class="loc-pill-img">
+                <img alt="Blackbird Cafe logo" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/blackbird%20logo%20(1).png/:/rs=w:72,h:72,m"/>
+              </div>
+              <div class="loc-pill-body">
+                <div class="loc-name">Groton</div>
+                <div class="loc-addr">Groton, MA 01450</div>
+                <div class="loc-actions">
+                  <a class="mini-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Blackbird%20Cafe%20Groton%20MA%2001450" target="_blank" rel="noopener">Map</a>
+                  <a class="mini-btn primary" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATERING -->
+  <section id="catering" aria-label="Catering">
+    <div class="wrap grid">
+      <div class="visual" aria-label="Catering visual">
+        <img src="https://img1.wsimg.com/isteam/stock/47047" alt="Breakfast sandwich"/>
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="stamp stamp-dark">
+          <strong>Catering</strong>
+          <span>meetings &bull; teams &bull; mornings</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Catering</div>
+        <h2>Show up strong.</h2>
+        <p>Coffee + food built for groups. Simple options, clean handoff, zero chaos.</p>
+
+        <div class="cards" style="grid-template-columns:1fr; margin-top:18px">
+          <div class="card">
+            <h3>Catering pickup</h3>
+            <p>Order ahead and pick up when it works best for your team.</p>
+            <div class="meta"><span>Fast</span><span>Easy</span></div>
+            <a class="btn" href="https://www.toasttab.com/catering/blackbird-cafee-inc/?mode=fulfillment" target="_blank" rel="noopener" style="margin-top:12px">Start pickup order</a>
+          </div>
+
+          <div class="card">
+            <h3>Catering delivery</h3>
+            <p>Delivery options through our delivery hub. Great for offices and events.</p>
+            <div class="meta"><span>Reliable</span><span>Flexible</span></div>
+            <a class="btn" href="https://www.ezcater.com/brand/pvt/blackbird-cafe-massachusetts" target="_blank" rel="noopener" style="margin-top:12px">Start delivery order</a>
+          </div>
+
+          <div class="card">
+            <h3>Contact catering</h3>
+            <p>Need help with a bigger order or timing? Send a request or call us.</p>
+            <div class="meta"><span>Quick</span><span>Helpful</span></div>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn" href="https://www.toasttab.com/invoice/lead?rx=e6442f73-63ee-49c7-8f98-3e0d29e08925&amp;ot=b494ca47-5afd-4faf-9858-55c0eefad2cf" target="_blank" rel="noopener">Request catering</a>
+              <a class="btn dark" href="tel:+19782637722">Call (978) 263-7722</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="https://www.toasttab.com/catering/blackbird-cafee-inc/?mode=fulfillment" target="_blank" rel="noopener">Catering pickup</a>
+          <a class="btn" href="https://www.ezcater.com/brand/pvt/blackbird-cafe-massachusetts" target="_blank" rel="noopener">Catering delivery</a>
+          <a class="btn" href="https://www.toasttab.com/invoice/lead?rx=e6442f73-63ee-49c7-8f98-3e0d29e08925&amp;ot=b494ca47-5afd-4faf-9858-55c0eefad2cf" target="_blank" rel="noopener">Contact catering</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop" aria-label="Shop">
+    <div class="wrap">
+      <div class="eyebrow">Shop</div>
+      <h2>Bring it home.</h2>
+      <p>Whole bean coffee + teas shipped nationwide, plus gifts, bulk, and limited drops.</p>
+
+      <div class="shop-cards" role="list" aria-label="Shop items">
+        <div class="shop-card" role="listitem">
+          <div class="shop-media">
+            <img alt="Hot sauce bottle" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/ols/IMG_6453.jpeg/:/rs=w:1200,h:1200"/>
+          </div>
+          <h3>Hot Sauce</h3>
+          <div class="shop-meta">FREE SHIPPING</div>
+          <div class="shop-price">$22.00</div>
+        </div>
+
+        <div class="shop-card" role="listitem">
+          <div class="shop-media">
+            <img alt="Midnight Dark Roast Coffee" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/ols/coffee.jpg/:/rs=w:1200,h:1200"/>
+          </div>
+          <h3>Midnight Dark Roast</h3>
+          <div class="shop-meta">FREE SHIPPING</div>
+          <div class="shop-price">$30.00</div>
+        </div>
+
+        <div class="shop-card" role="listitem">
+          <div class="shop-media">
+            <img alt="5 LB coffee bulk bag" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/ols/bulk%20coffee.jpg/:/rs=w:1200,h:1200"/>
+          </div>
+          <h3>5 LB Coffee (Bulk)</h3>
+          <div class="shop-meta">FREE SHIPPING</div>
+          <div class="shop-price">$120.00</div>
+        </div>
+
+        <div class="shop-card" role="listitem">
+          <div class="shop-media">
+            <img alt="Custom label coffee" loading="lazy" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/ols/coffee.jpg/:/rs=w:1200,h:1200"/>
+          </div>
+          <h3>Custom Label Coffee</h3>
+          <div class="shop-meta">FREE SHIPPING</div>
+          <div class="shop-price">$350.00</div>
+        </div>
+      </div>
+
+      <div class="shop-foot">
+        <a class="btn dark" href="https://myblackbirdcafe.com/shop" target="_blank" rel="noopener">Shop coffee &amp; tea</a>
+        <a class="btn" href="https://order.toasttab.com/egiftcards/blackbird-cafee-inc" target="_blank" rel="noopener">Gift cards</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREW -->
+  <section id="crew" aria-label="Meet the crew">
+    <div class="wrap grid">
+      <div>
+        <div class="eyebrow">Meet the crew</div>
+        <h2>Built by a local crew.</h2>
+        <p>The people behind the counter and behind the scenes, keeping the coffee strong and the welcome real.</p>
+        <div class="owners owners-centered" aria-label="Owners">
+          <div class="owner-pill">
+            <div class="owner-avatar" aria-hidden="true">LK</div>
+            <div class="owner-name">Luke Kenney</div>
+            <div class="owner-role">Owner</div>
+          </div>
+          <div class="owner-pill">
+            <div class="owner-avatar" aria-hidden="true">KK</div>
+            <div class="owner-name">Katie Kenney</div>
+            <div class="owner-role">Owner</div>
+          </div>
+          <div class="owner-pill">
+            <div class="owner-avatar" aria-hidden="true">JA</div>
+            <div class="owner-name">Jennifer Abraham</div>
+            <div class="owner-role">Operations</div>
+          </div>
+        </div>
+      </div>
+      <div class="visual">
+        <img alt="Cafe exterior" loading="lazy" decoding="async" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/Acton%20Exterior.jpg/:/cr=t:0%25,l:4.24%25,w:91.52%25,h:100%25/rs=w:1000,h:1000,cg:true"/>
+        <div class="overlay" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REWARDS + GAME -->
+  <section id="play" aria-label="Rewards and game">
+    <div class="wrap grid">
+      <div class="frame" aria-label="Rewards embed">
+        <div class="iframe-zoom">
+          <iframe src="https://www.toasttab.com/blackbird-cafee-inc/rewardsLookup" title="My Blackbird Cafe Rewards" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="game-link">
+            <div class="helper" style="margin-top:10px">Still want to play? Open <strong>Bean Wars</strong>.</div>
+            <a class="btn" href="https://bean-wars.vercel.app/" target="_blank" rel="noopener">Open the game</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Rewards</div>
+        <h2>My Blackbird Cafe Rewards.</h2>
+        <p>Log in to check points, perks, and your account details.</p>
+
+        <div class="rewards-box" aria-label="Rewards lookup">
+          <h3>Quick lookup</h3>
+          <p style="color:rgba(255,255,255,.78); font-size:14px">Type a phone number or email to jump to the rewards page.</p>
+          <div class="rewards-row">
+            <input class="input" id="rewardsInput" type="text" inputmode="tel" placeholder="Enter phone or email" aria-label="Phone or email for rewards lookup"/>
+            <button class="btn primary" id="rewardsLookupBtn" type="button">Go</button>
+          </div>
+          <div class="helper">Tip: Customers can also open the rewards page above to log in directly.</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="https://www.toasttab.com/blackbird-cafee-inc/rewardsLookup" target="_blank" rel="noopener">Open rewards page</a>
+          <a class="btn" href="#shop">Shop coffee</a>
+        </div>
+
+        <div class="mini-card">
+          <img alt="Bean Wars mascot" id="beanWarsMascot" src="https://cdn.prod.website-files.com/64aa957da446d8dc44869f81/694e9a4fbdd7184b657c0f77_n_17763%20Small.jpeg"/>
+          <div>
+            <div class="eyebrow">Bean Wars</div>
+            <p>Play a quick round while you sip.</p>
+            <a class="mini-btn primary" href="https://bean-wars.vercel.app/" target="_blank" rel="noopener">Open the game</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIALS -->
+  <section id="socials" aria-label="Socials">
+    <div class="wrap">
+      <div class="eyebrow">Socials</div>
+      <div class="socials-head">
+        <h2>See what's brewing online.</h2>
+        <div class="socials-icons">
+          <a class="social-ico" href="https://www.instagram.com/myblackbirdcafe/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.6 2h8.8A5.6 5.6 0 0 1 22 7.6v8.8A5.6 5.6 0 0 1 16.4 22H7.6A5.6 5.6 0 0 1 2 16.4V7.6A5.6 5.6 0 0 1 7.6 2zm0 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8A3.6 3.6 0 0 0 20 16.4V7.6A3.6 3.6 0 0 0 16.4 4H7.6z"/><path d="M12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 2A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3z"/><circle cx="17.3" cy="6.7" r="1.1"/></svg>
+          </a>
+          <a class="social-ico" href="https://x.com/myblackbirdcafe" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.7l-5.2-6.6L5.6 22H2.5l7.3-8.4L1 2h6.9l4.7 6.1L18.9 2zm-1.2 18h1.7L6.8 3.9H5L17.7 20z"/></svg>
+          </a>
+          <a class="social-ico" href="https://www.facebook.com/myblackbirdcafe/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.8l.5-3H13.5V9.2c0-.9.3-1.5 1.6-1.5H17V5c-.3 0-1.5-.1-2.9-.1-2.9 0-4.9 1.8-4.9 5V11H6.5v3h2.7v8h4.3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <p>Recent posts and updates from Blackbird Cafe.</p>
+
+      <div class="carousel" aria-label="Recent posts carousel">
+        <div class="carousel-head">
+          <div class="carousel-title">Recent posts</div>
+        </div>
+        <div class="car-track" id="carTrack">
+          <div class="ig-embed ig-card">
+            <iframe class="ig-embed" src="https://www.instagram.com/p/DSpVLPyDTSb/embed/" title="Instagram post" loading="lazy" allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <a class="ig-open" href="https://www.instagram.com/p/DSpVLPyDTSb/" target="_blank" rel="noopener">Open</a>
+          </div>
+          <div class="ig-embed ig-card">
+            <iframe class="ig-embed" src="https://www.instagram.com/p/DS97sxPgFPt/embed/" title="Instagram post" loading="lazy" allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <a class="ig-open" href="https://www.instagram.com/p/DS97sxPgFPt/" target="_blank" rel="noopener">Open</a>
+          </div>
+          <div class="ig-embed ig-card">
+            <iframe class="ig-embed" src="https://www.instagram.com/p/DS-iS6lDs0L/embed/" title="Instagram post" loading="lazy" allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <a class="ig-open" href="https://www.instagram.com/p/DS-iS6lDs0L/" target="_blank" rel="noopener">Open</a>
+          </div>
+          <div class="ig-embed ig-card">
+            <iframe class="ig-embed" src="https://www.instagram.com/p/DTBHJNijqAz/embed/" title="Instagram post" loading="lazy" allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <a class="ig-open" href="https://www.instagram.com/p/DTBHJNijqAz/" target="_blank" rel="noopener">Open</a>
+          </div>
+          <div class="ig-embed ig-card">
+            <iframe class="ig-embed" src="https://www.instagram.com/p/DTDr4lEDwky/embed/" title="Instagram post" loading="lazy" allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <a class="ig-open" href="https://www.instagram.com/p/DTDr4lEDwky/" target="_blank" rel="noopener">Open</a>
+          </div>
+          <div class="ig-embed ig-card">
+            <iframe class="ig-embed" src="https://www.instagram.com/p/DTGQuydkZyV/embed/" title="Instagram post" loading="lazy" allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <a class="ig-open" href="https://www.instagram.com/p/DTGQuydkZyV/" target="_blank" rel="noopener">Open</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="endcap" aria-label="Footer">
+  <div class="wrap">
+    <div class="endcap-row">
+      <img class="endcap-logo" alt="Blackbird Cafe logo" src="https://img1.wsimg.com/isteam/ip/f7236440-d549-4e95-b00f-5821f4745afe/blackbird%20logo%20(1).png/:/rs=w:120,h:120,m"/>
+      <a class="apply-link" href="https://forms.monday.com/forms/8916218e25d0a82688f1c48001d2b964?r=use1" target="_blank" rel="noopener">
+        Job opportunities at Blackbird. Apply here.
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="to-top" id="toTop" aria-label="Back to top" type="button">&uarr;</button>
+
+<!-- MENU MODAL -->
+<div id="menuModal" class="modal" role="dialog" aria-modal="true" aria-label="Menu viewer" hidden>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div class="modal-title" id="menuModalTitle">Menu</div>
+      <button class="modal-close" id="menuClose" type="button" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="viewer">
+      <div class="mv-wrap" aria-label="Menu viewer wrapper">
+        <div class="mv-stage" id="mvStage" aria-label="Menu stage">
+          <button class="mv-reset" id="mvReset" type="button" aria-label="Reset to full view">Full view</button>
+          <div class="mv-hand" id="mvHand" aria-hidden="true">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M24 30V16a4 4 0 0 1 8 0v12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
+              <path d="M32 28V14a4 4 0 0 1 8 0v16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
+              <path d="M40 30V18a4 4 0 0 1 8 0v20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
+              <path d="M24 30c-6 0-10 4-10 10 0 12 10 18 22 18s20-8 20-20v-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
+            </svg>
+            <span>Drag to pan</span>
+          </div>
+          <div class="mv-card" id="mvCard" role="button" tabindex="0" aria-label="Menu. Click to flip. Scroll to zoom. Drag to pan.">
+            <div class="mv-face mv-front">
+              <div class="mv-inner">
+                <img id="mvFrontImg" alt="Menu front"/>
+              </div>
+            </div>
+            <div class="mv-face mv-back">
+              <div class="mv-inner">
+                <img id="mvBackImg" alt="Menu back"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mv-controls" aria-label="Menu controls">
+          <div class="mv-menu-tabs" role="tablist" aria-label="Menu pages">
+            <button class="mv-tab is-active" role="tab" type="button" data-menu-tab="breakfast" aria-selected="true">Breakfast</button>
+            <button class="mv-tab" role="tab" type="button" data-menu-tab="lunch" aria-selected="false">Lunch</button>
+          </div>
+          <div class="mv-tip">Click to flip &bull; Scroll to zoom &bull; Drag to pan</div>
+          <div class="mv-spacer"></div>
+          <button class="zoom-btn" id="zoomOut" type="button" aria-label="Zoom out">&minus;</button>
+          <div class="zoom-readout" id="zoomReadout">100%</div>
+          <button class="zoom-btn" id="zoomIn" type="button" aria-label="Zoom in">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE QUICK ACTIONS -->
+<div class="mobile-cta" id="mobileCta" aria-label="Quick actions">
+  <a class="mcta-order" href="https://order.toasttab.com/online/locations/20e912e6-364f-4be2-8592-2888620dbc07/9122b7fa-ccd5-4bc5-9a11-d28e90c3cda8" target="_blank" rel="noopener">Start Order</a>
+  <button class="mcta-btn" type="button" data-menu="breakfast" data-menu-open="front">Menu</button>
+  <button class="mcta-btn" type="button" data-menu="lunch" data-menu-open="front">Lunch</button>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
