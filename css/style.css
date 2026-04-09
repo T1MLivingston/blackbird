@@ -1,8 +1,10 @@
-/* ============================================================
-   Blackbird Cafe – Consolidated Stylesheet
-   ============================================================ */
+/* ==========================================================================
+   BLACKBIRD CAFE - Consolidated Stylesheet
+   ========================================================================== */
 
-/* --- Design Tokens --- */
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS
+   -------------------------------------------------------------------------- */
 :root {
   --bg: #0b0b0c;
   --ink: #ffffff;
@@ -15,14 +17,17 @@
   --max: 1180px;
   --pad: clamp(18px, 2.8vw, 28px);
   --ease: cubic-bezier(.2,.8,.2,1);
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
   --paper: #f6f2ea;
   --paperInk: #111114;
   --paperMuted: rgba(17,17,20,.72);
   --paperLine: rgba(17,17,20,.12);
 }
 
-/* --- Reset + Base --- */
+/* --------------------------------------------------------------------------
+   2. RESET + BASE
+   -------------------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; }
 html { scroll-behavior: smooth; }
@@ -40,13 +45,10 @@ main { min-height: 100dvh; }
 section { padding: clamp(34px, 4.8vw, 58px) var(--pad); position: relative; }
 .wrap { width: min(var(--max), 100%); margin: 0 auto; }
 .sr { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-a:focus-visible, button:focus-visible, input:focus-visible {
-  outline: 2px solid rgba(255,255,255,.9);
-  outline-offset: 3px;
-  border-radius: 12px;
-}
 
-/* --- Nav --- */
+/* --------------------------------------------------------------------------
+   3. NAV
+   -------------------------------------------------------------------------- */
 .nav {
   position: sticky; top: 0; z-index: 60;
   background: #fff;
@@ -77,15 +79,17 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   transition: background .2s var(--ease);
 }
 .links a:hover::after { background: rgba(0,0,0,.65); }
-.links a.is-active::after {
-  height: 2px; border-radius: 999px;
-  background: rgba(0,0,0,.78); bottom: -8px;
-}
 .nav-right { display: flex; align-items: center; gap: 10px; }
 .nav-order-btn {
+  display: inline-flex; align-items: center; justify-content: center;
   padding: 10px 14px; min-height: 40px;
   font-size: 12px; border-radius: 999px;
+  font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+  text-decoration: none; background: var(--paperInk); color: #fff;
+  border: none; cursor: pointer;
+  transition: transform .18s var(--ease);
 }
+.nav-order-btn:hover { transform: translateY(-1px); }
 .pill {
   font-family: var(--mono);
   border: 1px solid rgba(0,0,0,.16); padding: 8px 10px;
@@ -96,13 +100,19 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   width: 34px; height: 34px; display: grid; place-items: center;
   border-radius: 999px; border: 1px solid rgba(0,0,0,.16);
   background: transparent; color: #000; text-decoration: none;
-  transition: transform .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease), opacity .18s var(--ease);
+  transition: transform .18s var(--ease), border-color .18s var(--ease),
+              background .18s var(--ease), opacity .18s var(--ease);
   opacity: .9;
 }
 .social-link svg { width: 18px; height: 18px; fill: currentColor; }
-.social-link:hover { transform: translateY(-1px); border-color: rgba(0,0,0,.28); background: rgba(0,0,0,.04); opacity: 1; }
+.social-link:hover {
+  transform: translateY(-1px); border-color: rgba(0,0,0,.28);
+  background: rgba(0,0,0,.04); opacity: 1;
+}
 
-/* --- Typography --- */
+/* --------------------------------------------------------------------------
+   4. TYPOGRAPHY
+   -------------------------------------------------------------------------- */
 .eyebrow {
   font-family: var(--mono); letter-spacing: .14em;
   text-transform: uppercase; font-size: 12px;
@@ -116,7 +126,9 @@ h2 {
 }
 p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 
-/* --- Grid + Buttons --- */
+/* --------------------------------------------------------------------------
+   5. GRID + BUTTONS
+   -------------------------------------------------------------------------- */
 .grid {
   display: grid; grid-template-columns: 1.25fr .75fr;
   gap: clamp(16px, 3vw, 36px); align-items: center;
@@ -126,7 +138,8 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   color: var(--ink); padding: 12px 16px; border-radius: 999px;
   font-family: inherit; font-weight: 900; letter-spacing: .08em;
   text-transform: uppercase; font-size: 12px; text-decoration: none;
-  transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+  transition: transform .18s var(--ease), background .18s var(--ease),
+              border-color .18s var(--ease);
   display: inline-flex; align-items: center; justify-content: center;
   gap: 10px; white-space: nowrap; min-height: 46px; cursor: pointer;
 }
@@ -137,10 +150,12 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 .btn.dark:hover { transform: translateY(-1px); }
 .btn.gray { background: rgba(17,17,20,.08); border-color: rgba(17,17,20,.18); }
 .btn.gray:hover { background: rgba(17,17,20,.12); }
-.btn.small { min-height: 40px; padding: 10px 12px; font-size: 11px; }
-.btn.tiny { min-height: 34px; padding: 8px 12px; font-size: 12px; }
+.btn.small { min-height: 40px; padding: 10px 12px 11px; font-size: 11px; }
+.btn.tiny { min-height: 34px; padding: 8px 12px 12px; font-size: 12px; }
 
-/* --- Cards --- */
+/* --------------------------------------------------------------------------
+   6. CARDS
+   -------------------------------------------------------------------------- */
 .cards {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 14px; margin-top: 18px;
@@ -166,7 +181,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 .bul { margin: 10px 0 0 18px; padding: 0; color: rgba(255,255,255,.80); font-size: 14px; line-height: 1.6; }
 .bul li { margin: 4px 0; }
 
-/* --- Visual Blocks --- */
+/* --------------------------------------------------------------------------
+   7. VISUAL BLOCKS
+   -------------------------------------------------------------------------- */
 .visual {
   border-radius: var(--radius); border: 1px solid rgba(255,255,255,.10);
   overflow: hidden; position: relative; min-height: 420px;
@@ -184,7 +201,8 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   position: absolute; left: 18px; bottom: 18px;
   display: flex; flex-direction: column; gap: 6px;
   padding: 12px 12px 10px; border-radius: 16px;
-  backdrop-filter: blur(8px); max-width: 92%;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  max-width: 92%;
 }
 .visual .stamp strong { text-transform: uppercase; letter-spacing: .10em; font-weight: 900; font-size: 12px; }
 .visual .stamp span { font-family: var(--mono); font-size: 12px; line-height: 1.35; }
@@ -198,8 +216,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 }
 .stamp.stamp-dark strong { color: #fff; }
 .stamp.stamp-dark span { color: rgba(255,255,255,.86); }
-
-/* --- Hero --- */
+/* --------------------------------------------------------------------------
+   8. HERO
+   -------------------------------------------------------------------------- */
 .hero {
   padding-top: clamp(54px, 7vw, 92px); overflow: hidden;
   min-height: min(92vh, 940px);
@@ -228,7 +247,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 }
 .hero-actions { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
-/* Hero Menu Preview */
+/* --------------------------------------------------------------------------
+   9. HERO MENU PREVIEW
+   -------------------------------------------------------------------------- */
 .hero-menu { align-self: start; }
 .menu-stack {
   width: min(420px, 100%); border: 0; background: transparent;
@@ -246,7 +267,25 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 }
 .menu-front { position: relative; transform: rotate(-2deg); }
 
-/* --- Paper Sections (light bg) --- */
+/* --------------------------------------------------------------------------
+   10. VALUES STRIP
+   -------------------------------------------------------------------------- */
+.values {
+  background:
+    linear-gradient(to right, rgba(255,255,255,.03), transparent 40%),
+    linear-gradient(to left, rgba(255,255,255,.03), transparent 40%);
+  border-top: 1px solid var(--faint);
+  border-bottom: 1px solid var(--faint);
+}
+.value-word {
+  font-family: var(--mono); font-size: 12px;
+  text-transform: uppercase; letter-spacing: .10em; font-weight: 800;
+}
+.value-def { font-size: 15px; line-height: 1.6; color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   11. PAPER SECTIONS (light bg)
+   -------------------------------------------------------------------------- */
 .paper { background: var(--paper); color: var(--paperInk); }
 .paper .eyebrow { color: rgba(17,17,20,.62); }
 .paper h2 { color: var(--paperInk); }
@@ -258,13 +297,15 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 .paper .card::before { display: none; }
 .paper .meta { color: rgba(17,17,20,.62); }
 
-/* --- Order Section --- */
+/* --------------------------------------------------------------------------
+   12. ORDER SECTION
+   -------------------------------------------------------------------------- */
 #order { background: #fff; color: var(--paperInk); }
 #order .eyebrow { color: rgba(17,17,20,.62); }
 #order h2 { color: var(--paperInk); }
 #order p { color: rgba(17,17,20,.72); }
-#order .order-head h2 { font-size: clamp(38px, 5vw, 78px); letter-spacing: -0.02em; }
-#order .order-head-row {
+.order-head h2 { font-size: clamp(38px, 5vw, 78px); letter-spacing: -0.02em; }
+.order-head-row {
   display: flex; align-items: flex-end; justify-content: space-between;
   gap: 14px; flex-wrap: wrap;
 }
@@ -281,26 +322,23 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   font-size: 12px; color: rgba(11,11,12,.6);
   padding: 10px 14px 14px; border-top: 1px solid rgba(0,0,0,.08);
 }
-#order .order-right { height: auto; }
-#order .order-pills {
-  display: flex; flex-direction: column; gap: 12px;
-}
-
-/* Location pills */
-#order .loc-pill {
+.order-right { height: auto; }
+.order-pills { display: flex; flex-direction: column; gap: 12px; }
+.loc-pill {
   display: grid; grid-template-columns: 80px 1fr; gap: 12px;
   align-items: center; border: 1px solid rgba(17,17,20,.12);
   background: #fff; border-radius: 18px; padding: 10px;
   box-shadow: 0 10px 24px rgba(0,0,0,.06); cursor: pointer;
-  transition: transform .18s var(--ease), border-color .18s var(--ease), box-shadow .18s var(--ease);
+  transition: transform .18s var(--ease), border-color .18s var(--ease),
+              box-shadow .18s var(--ease);
   position: relative;
 }
-#order .loc-pill:hover { transform: translateY(-1px); border-color: rgba(17,17,20,.22); }
-#order .loc-pill.is-active {
+.loc-pill:hover { transform: translateY(-1px); border-color: rgba(17,17,20,.22); }
+.loc-pill.is-active {
   background: rgba(0,0,0,.045); border-color: rgba(0,0,0,.55);
   box-shadow: 0 16px 34px rgba(0,0,0,.12); transform: translateY(-1px) scale(1.01);
 }
-#order .loc-pill.is-active::before {
+.loc-pill.is-active::before {
   content: ""; position: absolute; left: 10px; top: 12px; bottom: 12px;
   width: 3px; border-radius: 999px; background: rgba(0,0,0,.78);
 }
@@ -316,13 +354,12 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   border: 1px solid rgba(17,17,20,.14); background: #fff;
   color: var(--paperInk); text-decoration: none;
   font-weight: 900; font-size: 12px; letter-spacing: .02em; white-space: nowrap;
-  transition: transform .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease);
+  transition: transform .18s var(--ease), border-color .18s var(--ease),
+              background .18s var(--ease);
 }
 .mini-btn:hover { transform: translateY(-1px); border-color: rgba(17,17,20,.28); }
 .mini-btn.primary { background: var(--paperInk); color: #fff; border-color: var(--paperInk); }
 .mini-btn svg { width: 14px; height: 14px; }
-
-/* Location tools */
 .loc-tools-inline {
   display: flex; align-items: center; gap: 10px;
   flex: 1 1 520px; justify-content: flex-end;
@@ -334,9 +371,7 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   color: rgba(17,17,20,.92); background: #fff;
 }
 .loc-status { margin-top: 10px; font-size: 12px; color: rgba(17,17,20,.68); line-height: 1.35; }
-
-/* Leaflet custom markers */
-.bb-marker-wrap { background: transparent; border: none; }
+.bb-marker-wrap { background: transparent; border: none; cursor: pointer; padding: 0; }
 .bb-marker {
   width: 14px; height: 14px; border-radius: 999px;
   background: #111114; border: 2px solid #fff;
@@ -347,8 +382,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   background: #fff; border: 2px solid #111114;
   box-shadow: 0 12px 20px rgba(0,0,0,.30);
 }
-
-/* --- Catering --- */
+/* --------------------------------------------------------------------------
+   13. CATERING
+   -------------------------------------------------------------------------- */
 #catering { position: relative; overflow: hidden; }
 #catering::after {
   content: ""; position: absolute; inset: 0;
@@ -358,7 +394,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 #catering .wrap.grid { align-items: stretch; }
 #catering .visual { height: 100%; min-height: 640px; }
 
-/* --- Shop (paper bg) --- */
+/* --------------------------------------------------------------------------
+   14. SHOP
+   -------------------------------------------------------------------------- */
 #shop { background: var(--paper); color: var(--paperInk); }
 #shop .eyebrow { color: rgba(17,17,20,.62); }
 #shop h2 { color: var(--paperInk); }
@@ -389,7 +427,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 .shop-price { margin-top: 6px; font-weight: 900; color: var(--paperInk); font-size: 12px; }
 .shop-foot { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* --- Crew --- */
+/* --------------------------------------------------------------------------
+   15. CREW
+   -------------------------------------------------------------------------- */
 #crew { background: var(--bg); }
 #crew .visual .overlay {
   background: linear-gradient(to bottom, rgba(11,11,12,.06), rgba(11,11,12,.28));
@@ -414,7 +454,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 .owner-name { font-weight: 900; letter-spacing: .02em; font-size: 16px; }
 .owner-role { color: rgba(255,255,255,.70); font-size: 13px; }
 
-/* --- Rewards + Play --- */
+/* --------------------------------------------------------------------------
+   16. REWARDS / PLAY
+   -------------------------------------------------------------------------- */
 .frame {
   width: 100%; border: 1px solid rgba(255,255,255,.14);
   border-radius: 22px; background: rgba(255,255,255,.02);
@@ -451,7 +493,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 .mini-card p { margin: 6px 0 10px; color: rgba(17,17,20,.72); font-size: 13px; }
 #play .wrap.grid { align-items: start; }
 
-/* --- Socials --- */
+/* --------------------------------------------------------------------------
+   17. SOCIALS
+   -------------------------------------------------------------------------- */
 .socials-head {
   display: flex; align-items: center; justify-content: space-between;
   gap: 14px; margin-top: 6px;
@@ -461,7 +505,8 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   width: 42px; height: 42px; border-radius: 999px;
   border: 1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.35);
   display: grid; place-items: center; color: #fff; text-decoration: none;
-  transition: transform .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease);
+  transition: transform .18s var(--ease), border-color .18s var(--ease),
+              background .18s var(--ease);
 }
 .social-ico svg { width: 18px; height: 18px; fill: currentColor; }
 .social-ico:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.34); background: rgba(0,0,0,.55); }
@@ -479,6 +524,7 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   scroll-snap-type: x mandatory; padding-bottom: 10px;
   -webkit-overflow-scrolling: touch;
 }
+.car-track::-webkit-scrollbar { display: none; }
 .ig-card {
   flex: 0 0 320px; max-width: 320px; border-radius: 22px;
   overflow: hidden; background: #fff;
@@ -495,8 +541,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   background: rgba(0,0,0,.72); color: #fff;
   text-decoration: none; border: 1px solid rgba(255,255,255,.16);
 }
-
-/* --- Footer (endcap) --- */
+/* --------------------------------------------------------------------------
+   18. FOOTER
+   -------------------------------------------------------------------------- */
 .endcap { padding-top: 14px; padding-bottom: 34px; }
 .endcap-row {
   display: flex; flex-direction: column; align-items: center;
@@ -509,7 +556,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 }
 .apply-link:hover { text-decoration: underline; color: #fff; }
 
-/* --- Menu Modal --- */
+/* --------------------------------------------------------------------------
+   19. MENU MODAL
+   -------------------------------------------------------------------------- */
 .modal[hidden] { display: none; }
 .modal {
   position: fixed; inset: 0; z-index: 120;
@@ -624,7 +673,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   color: rgba(17,17,20,.70);
 }
 
-/* --- Mobile CTA --- */
+/* --------------------------------------------------------------------------
+   20. MOBILE CTA
+   -------------------------------------------------------------------------- */
 .mobile-cta {
   display: none; position: fixed;
   left: 12px; right: 12px;
@@ -645,7 +696,9 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
 }
 .mobile-cta .mcta-order { background: #fff; color: #000; border-color: #fff; }
 
-/* --- Back to Top --- */
+/* --------------------------------------------------------------------------
+   21. BACK TO TOP
+   -------------------------------------------------------------------------- */
 .to-top {
   position: fixed; right: 18px; bottom: 18px;
   width: 44px; height: 44px; border-radius: 999px;
@@ -653,15 +706,24 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   color: #fff; display: flex; align-items: center; justify-content: center;
   cursor: pointer; box-shadow: 0 16px 30px rgba(0,0,0,.28);
   opacity: 0; transform: translateY(10px); pointer-events: none;
-  transition: opacity .18s var(--ease), transform .18s var(--ease), background .18s var(--ease);
+  transition: opacity .18s var(--ease), transform .18s var(--ease),
+              background .18s var(--ease);
   z-index: 999; font-family: inherit;
 }
 .to-top:hover { background: rgba(0,0,0,.68); }
 .to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
-/* ============================================================
-   Responsive
-   ============================================================ */
+/* --------------------------------------------------------------------------
+   22. NAV ACTIVE STATE
+   -------------------------------------------------------------------------- */
+.links a.is-active::after {
+  height: 2px; border-radius: 999px;
+  background: rgba(0,0,0,.78); bottom: -8px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
 @media (max-width: 980px) {
   .grid { grid-template-columns: 1fr; }
   .links { display: none; }
@@ -680,7 +742,7 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   .hero-grid { grid-template-columns: 1fr; }
   .order-layout.order-v3 { grid-template-columns: 1fr; }
   .order-map { height: 480px; }
-  #order .order-head-row { align-items: stretch; }
+  .order-head-row { align-items: stretch; }
   .loc-tools-inline { justify-content: flex-start; flex: 1 1 100%; }
   .loc-tools-inline .loc-input { flex: 1 1 auto; }
 }
@@ -689,16 +751,10 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   .hero-menu { margin-top: 22px; }
   .hero-actions { margin-bottom: 22px; }
   .menu-stack { transform: scale(1.04); }
-  #order .order-map-card { display: none; }
-  #order .order-map { height: 480px; }
   #catering .grid { grid-template-columns: 1fr; }
-  #catering .visual { order: 0; }
+  #catering .copy { order: -1; }
   #menu .grid { grid-template-columns: 1fr; }
   #menu .visual { order: -1; margin-bottom: 16px; }
-  #shop .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  #shop .card { padding: 10px; }
-  #shop .card p { display: none; }
-  #play .game-wide iframe { height: 82vh; min-height: 560px; }
 }
 
 @media (max-width: 560px) {
@@ -714,10 +770,27 @@ p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 16px; }
   .loc-pill-img { width: 84px; height: 84px; border-radius: 16px; }
 }
 
-/* --- Reduced Motion --- */
+/* --------------------------------------------------------------------------
+   23. REDUCED MOTION
+   -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .social-link, .social-ico, .mini-btn { transition: none; }
-  .car-track { transform: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .car-track { transform: none !important; }
   .mv-card { transition: none; }
+}
+
+/* --------------------------------------------------------------------------
+   24. FOCUS VISIBLE
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(255,255,255,.9);
+  outline-offset: 3px;
+  border-radius: 12px;
 }
